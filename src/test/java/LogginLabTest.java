@@ -31,4 +31,10 @@ public class LogginLabTest {
             }
         }
     }
+
+    @Test
+    public void thisisatest(){
+
+        
+    }
 }
