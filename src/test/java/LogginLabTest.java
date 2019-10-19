@@ -1,8 +1,12 @@
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import static org.junit.Assert.*;
 
+@SuppressWarnings("all")
 public class LogginLabTest {
     private final static Logger logger = Logger.getLogger(LogginLab.class.getName());
 
@@ -14,6 +18,22 @@ public class LogginLabTest {
     public void tearDown() throws Exception {
     }
 
+    @Test
+    public void testThresholdReached() {
+        // given
+        LogginLab logginLab = new LogginLab();
+        int threshold = 5;
+        logginLab.setThreshold(threshold);
+        int limit = 10;
+        boolean expected = true;
+
+        // when
+        boolean outcome = logginLab.thresholdReached(limit);
+
+        //then
+        Assert.assertEquals(expected, outcome);
+    }
+
     @org.junit.Test
     public void thresholdExceeds() {
         Integer finalLimit = 5;
@@ -23,7 +43,7 @@ public class LogginLabTest {
 
         for (Integer i = 1; i <= finalLimit; i++) {
             if (lab.thresholdExceeds(i)) {
-                logger.log(Level.INFO, "Threshold not reached! It is "+i);
+                logger.log(Level.INFO, "Threshold not reached! It is " + i);
                 assertTrue(lab.thresholdExceeds(i));
             } else {
                 logger.log(Level.INFO, "Threshold finally reached!");
@@ -32,3 +52,5 @@ public class LogginLabTest {
         }
     }
 }
+
+
