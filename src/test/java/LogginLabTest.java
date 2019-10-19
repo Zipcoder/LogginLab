@@ -37,7 +37,15 @@ public class LogginLabTest {
     public void thisisatest(){
 
         LogginLab logginlab1 = new LogginLab();
-        
+        assertEquals(true, logginlab1.thresholdreached(1));
+
+    }
+
+    @Test
+    public void thisisatest(){
+
+        LogginLab logginlab2 = new LogginLab();
+        assertEquals(false, logginlab2.thresholdreached(0));
 
     }
 }
