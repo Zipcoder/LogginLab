@@ -23,12 +23,36 @@ public class LogginLabTest {
 
         for (Integer i = 1; i <= finalLimit; i++) {
             if (lab.thresholdExceeds(i)) {
-                logger.log(Level.INFO, "Threshold not reached! It is "+i);
+                logger.log(Level.INFO, "Threshold not reached! It is " + i);
                 assertTrue(lab.thresholdExceeds(i));
             } else {
                 logger.log(Level.INFO, "Threshold finally reached!");
                 assertFalse(lab.thresholdExceeds(i));
             }
         }
+    }
+    // Write a test for the thresholdReached method in the Test class.
+    @org.junit.Test
+    public void thresholdReached() {
+        Integer finalLimit = 5;
+
+        LogginLab lab = new LogginLab();
+        lab.setThreshold(finalLimit);
+
+        for (Integer i = 1; i <= finalLimit; i++) {
+            if (lab.thresholdReached(i)) {
+                logger.log(Level.INFO, "Threshold not reached! It is " + i);
+                assertFalse(lab.thresholdReached(i));
+            } else {
+                logger.log(Level.INFO, "Threshold finally reached!");
+                assertTrue(lab.thresholdReached(i));
+            }
+        }
+
+    /*
+        {LogginLab lab = new LogginLab();
+        lab.setThreshold(11);
+        assertTrue(lab.thresholdReached(12));
+    }*/
     }
 }
