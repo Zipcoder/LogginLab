@@ -1,3 +1,5 @@
+import org.junit.Test;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,4 +33,24 @@ public class LogginLabTest {
             }
         }
     }
-}
+
+
+    @Test
+    public void thresholdReached(){
+        //given thresholdreached is true
+        LogginLab lab = new LogginLab();
+        lab.thresholdReached();
+
+        String limit = "true";
+
+        //when threshold is true or false
+        lab.thresholdReached();
+
+        //then this will happen when threshold is reached
+        assertTrue("true",true);
+
+        }
+
+
+    }
+
