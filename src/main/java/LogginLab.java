@@ -35,9 +35,11 @@ public class LogginLab {
     public boolean thresholdReached(int Limit){
 
         if (Limit > threshold){
+            logger.log(Level.INFO, "Threshold reached!");
             return true;
         }
         else{
+            logger.log(Level.INFO, "Threshold has not been reached!");
             return false;
         }
     }
