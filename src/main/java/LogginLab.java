@@ -32,6 +32,18 @@ public class LogginLab {
         return (this.threshold > limit);
     }
 
+    public boolean thresholdReached(int Limit){
+
+        if (Limit > threshold){
+            logger.log(Level.INFO, "Threshold reached!");
+            return true;
+        }
+        else{
+            logger.log(Level.INFO, "Threshold has not been reached!");
+            return false;
+        }
+    }
+
     // Write a method called thresholdReached, returns true if argument 'limit' is over the threshold.
     // Write a test for the method in the Test class.
 }
