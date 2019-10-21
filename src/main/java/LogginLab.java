@@ -28,10 +28,14 @@ public class LogginLab {
         this.threshold = threshold;
     }
 
-    public boolean thresholdExceeds(Integer limit) {
-        return (this.threshold > limit);
-    }
+   // public boolean thresholdExceeds(Integer limit) {
+   //     return (this.threshold > limit);
+   // }
 
     // Write a method called thresholdReached, returns true if argument 'limit' is over the threshold.
     // Write a test for the method in the Test class.
+
+    public boolean thresholdReached(Integer limit) {
+        return (this.threshold < limit);
+    }
 }
