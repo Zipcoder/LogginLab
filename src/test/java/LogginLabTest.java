@@ -37,16 +37,16 @@ public class LogginLabTest<pulbic> {
     @Test
     public void thresholdReached() {
         Integer finalLimit = 5;
-
+        Integer largerLimit = 6;
         LogginLab lab = new LogginLab();
         lab.setThreshold(finalLimit);
 
-        for (Integer i = 1; i <= finalLimit; i++) {
+        for (Integer i = 1; i <= largerLimit; i++) {
             if (lab.thresholdReached(i)) {
-                logger.log(Level.INFO, "true");
+                logger.log(Level.INFO, "True " + i);
                 assertTrue(lab.thresholdReached(i));
             } else {
-                logger.log(Level.INFO, "false");
+                logger.log(Level.INFO, "False " + i);
                 assertFalse(lab.thresholdReached(i));
             }
         }
