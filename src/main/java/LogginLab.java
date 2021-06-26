@@ -7,7 +7,7 @@ public class LogginLab {
     private Integer threshold = 0;
 
     public LogginLab() {
-        this.threshold = 0;
+        this.threshold = 5;
     }
 
     public static void main(String[] args) {
@@ -17,7 +17,6 @@ public class LogginLab {
         logger.log(Level.WARNING, "Not So Bad Error!");
 
         logger.log(Level.INFO, "****\n\tAt ZipCode, \n\twe don't use System.out.Println \n\tuntil we've earned the right.\n****");
-
     }
 
     public Integer getThreshold() {
@@ -33,5 +32,13 @@ public class LogginLab {
     }
 
     // Write a method called thresholdReached, returns true if argument 'limit' is over the threshold.
-    // Write a test for the method in the Test class.
+
+
+    public boolean thresholdReached(Integer limit) {
+        return limit > this.threshold;
+    }
 }
+
+    // Write a test for the method in the Test class.
+
+
