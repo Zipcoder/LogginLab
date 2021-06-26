@@ -14,8 +14,29 @@ public class LogginLabTest {
     public void tearDown() throws Exception {
     }
 
+
     @org.junit.Test
-    public void thresholdExceeds() {
+    public void thresholdReached() {
+        Integer finalLimit = 5;
+
+        LogginLab lab = new LogginLab();
+        lab.setThreshold(finalLimit);
+
+        for (Integer i = 1; i <= finalLimit; i++) {
+            if (lab.thresholdReached(i)) {
+                logger.log(Level.INFO, "Threshold not reached! It is "+i);
+                assertTrue(lab.thresholdReached(i));
+            } else {
+                logger.log(Level.INFO, "Threshold finally reached!");
+                assertFalse(lab.thresholdReached(i));
+            }
+
+        }
+    }
+
+
+    @org.junit.Test
+    public void thresholdExeeds() {
         Integer finalLimit = 5;
 
         LogginLab lab = new LogginLab();
@@ -29,6 +50,7 @@ public class LogginLabTest {
                 logger.log(Level.INFO, "Threshold finally reached!");
                 assertFalse(lab.thresholdExceeds(i));
             }
+
         }
     }
 }
